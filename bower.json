@@ -1,0 +1,12 @@
+{
+  "name": "bootdemo",
+  "version": "0.0.0",
+  "appPath": "src/main/webapps",
+  "testPath": "src/test/javascript/spec",
+  "dependencies": {
+    "jquery": "2.1.3",
+  },
+  "resolutions": {
+    "jquery": "2.1.3"
+  }
+}
