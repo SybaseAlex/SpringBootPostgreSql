@@ -9,8 +9,18 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 /**
- *
  * @author Alex
+    CREATE TABLE demotable
+   (
+     data_id uuid NOT NULL,
+     data_description character varying(100) NOT NULL,
+     CONSTRAINT demotable_data_pk PRIMARY KEY (data_id)
+   )
+   WITH (
+     OIDS=FALSE
+   );
+   ALTER TABLE demotable
+     OWNER TO postgres;
  */
 @org.springframework.stereotype.Repository("dataRespitory")
 public class DataRepositoryImpl implements DataRepository<Data> {

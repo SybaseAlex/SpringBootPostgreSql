@@ -25,7 +25,7 @@ public class ExceptionHandlerController {
     @ExceptionHandler(RestException.class)
     public @ResponseBody
     String handleException(RestException e) {
-        LOG.error("Ошибка: " + e.getMessage(), e);
+        LOG.error("Ошибка: {}" , e.getMessage(), e);
         return "Ошибка: " + e.getMessage();
     }
 }
