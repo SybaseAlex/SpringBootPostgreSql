@@ -29,7 +29,7 @@ public class DataController extends ExceptionHandlerController {
     @Qualifier("dataService")
     private DataService dataService;
 
-    @RequestMapping(value = "/persist", method = RequestMethod.POST)
+    @RequestMapping(value = "/persist", method = RequestMethod.PUT)
     public @ResponseBody
     Map<String, Object> persist(@RequestParam("data") String data) throws RestException {
         try {

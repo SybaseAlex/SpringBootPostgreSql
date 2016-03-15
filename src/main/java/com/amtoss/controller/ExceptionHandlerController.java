@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * наша реализация Exception а
  * @author Alex
+ * own implementation of Exception
  */
 @Controller
 public class ExceptionHandlerController {
@@ -18,14 +18,14 @@ public class ExceptionHandlerController {
     private static final Logger LOG = LoggerFactory.getLogger(ExceptionHandlerController.class);
 
     /**
-     * Если мы словили такую ошибку в нашем контроллере, то она будет обработана дополнительно в этом методе
+     * If we caught the exception in our controller, it will be processed further in this method
      * @param e
      * @return 
      */
     @ExceptionHandler(RestException.class)
     public @ResponseBody
     String handleException(RestException e) {
-        LOG.error("Ошибка: {}" , e.getMessage(), e);
-        return "Ошибка: " + e.getMessage();
+        LOG.error("Error: {}" , e.getMessage(), e);
+        return "Error: " + e.getMessage();
     }
 }

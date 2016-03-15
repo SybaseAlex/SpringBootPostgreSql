@@ -4,14 +4,43 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>BootDemo</title>
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="js/operations.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="scripts/operations.js"></script>
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/services/DemoService.js"></script>
+    <script src="scripts/app/controllers/demoController.js"></script> 
+    
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
 <h3> Send string on backend and get collection in random order </h3>
 <input type="text" id="data"/>
-<a id="post" href="#">POST</a>
-<a id="get" href="#">GET</a>
+<a id="post" href="">POST</a>
+<a id="get" href="">GET</a>
 
 <div id="container"></div>
+
+<div ng-app = "demoApp">
+   <h3> Send string on backend and get collection in random order using Angular</h3> 
+   <div ng-controller="DemoController">
+       <div>
+           <input type="text" id="dataAngular" ng-model="messageForPost"/>
+       </div>
+       <div id="buttons">
+            <button type="button" class="btn btn-primary" ng-click="sendText()"> 
+                <span>POST</span>
+            </button> 
+             <button type="button" class="btn btn-default" ng-click="getText()"> 
+                 <span>GET</span>
+            </button> 
+       </div>
+       <div id="containerAngular">
+           <div ng-repeat="str in answer track by $index">
+                {{str}}
+            </div>
+       </div>
+   </div>
+</div>
 </body>
 </html>

@@ -20,7 +20,7 @@ $(document).ready(function () {
             alert("Enter your data!");
         } else {
             $.ajax({
-                type: "POST",
+                type: "PUT",
                 cache: false,
                 url: '/persist',
                 data: {

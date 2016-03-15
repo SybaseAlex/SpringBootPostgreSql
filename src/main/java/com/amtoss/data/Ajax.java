@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * классик, который будет формировать структуру данных для передачи на клиент
+ * class which will create structure of data to response for client
  * @author Alex
  */
 public class Ajax {
